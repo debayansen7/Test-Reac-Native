@@ -4,6 +4,8 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import UdaciSlider from './UdaciSlider';
 import UdaciSteppers from './UdaciSteppers';
 import DateHeader from './DateHeader';
+import { Ionicons } from '@expo/vector-icons'
+
 
 function SubmitBtn ({onPress}) {
   return (
@@ -24,7 +26,7 @@ export default class AddEntry extends React.Component {
   }
 
   increment = (metric) => {
-    const { max, stop } = getMetricMetaInfo(metric)
+    const { max, step } = getMetricMetaInfo(metric)
 
     this.setState((state) => {
       const count = state[metric] + step
@@ -73,6 +75,18 @@ export default class AddEntry extends React.Component {
 
   render() {
     const metaInfo = getMetricMetaInfo()
+
+    if(this.props.alreadylogged){
+      return (
+        <View>
+          <Ionicons
+            name='ios-happy-ouline'
+            size={100}
+          />
+          <Text>You are already logged you information for today</Text>
+        </View>
+      )
+    }
 
     // <DateHeader date={(new Date()).toString()}/>
     // <DateHeader date={(new Date()).toLocaleDateString()}/>
