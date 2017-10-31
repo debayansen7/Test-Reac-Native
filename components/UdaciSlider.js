@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { Text, Slider, View } from 'react-native';
-import {getMetricMetaInfo} from '../utils/helpers';
 
 export default function UdaciSlider({ max, unit, step, value, onChange }){
   return (

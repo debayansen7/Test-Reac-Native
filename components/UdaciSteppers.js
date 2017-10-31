@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import {getMetricMetaInfo} from '../utils/helpers';
 import { FontAwesome, Entypo } from '@expo/vector-icons'
 
 export default function UdaciSteppers({ max, unit, value, step, onIncrement, onDecrement }){
